@@ -5,18 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Booking App - Booking Page</title>
+    <title>Booking Page</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container-fluid">
-        <!-- NavBar -->
         <div class="row">
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <a class="navbar-brand" href="index.html">Table Booking App</a>
+                    <a class="navbar-brand" href="index.html">AnNajah Travels</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -26,13 +25,13 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="book.html">Book Table</a>
+                                <a class="nav-link" href="book.html">Book a Tour</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="list.html">View Bookings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Contact Us!</a>
                             </li>
                         </ul>
                     </div>
@@ -52,6 +51,7 @@
         </div>
 
         <!-- Booking Form -->
+        <h2 class="heading">Booking & contact</h2>
         <div class="row">
             <div class="col">
                 <div class="form-group">
@@ -84,16 +84,47 @@
                     </select>
                 </div>
             </div>
-            <div class="col">
-                <div class="form-group">
-                    <label for="userRemarks">Remarks</label>
-                    <textarea class="form-control" id="userRemarks" rows="3"></textarea>
-                </div>
-                <button type="button" class="btn btn-primary float-right" id="bookNowBtn">Book Now</button>
+        <div class="col">
+            <div class="form-group">
+                <label for="userPhone">Phone</label>
+                <input type="text" class="form-control" id="userPhone">
             </div>
         </div>
     </div>
 
+<form action="">
+
+    <div class="form-group">
+      <h2 class="heading">Travel Dates</h2>
+      <div class="grid">
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+          <input type="date" id="arrive" class="floatLabel" name="arrive" value="<?php echo date('Y-m-d'); ?>">
+          <label for="arrive" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Arrive</label>
+        </div>      
+      </div>
+      <div class="col-1-4 col-1-4-sm">
+        <div class="controls">
+          <input type="date" id="depart" class="floatLabel" name="depart" value="<?php echo date('Y-m-d'); ?>" />
+          <label for="depart" class="label-date"><i class="fa fa-calendar"></i>&nbsp;&nbsp;Depart</label>
+        </div>      
+      </div>      
+        
+       </div>
+        <div class="grid">
+          <p class="info-text">Please describe your extra needs e.g. Extra beds, children's cots</p>
+          <br>
+          <div class="controls">
+            <textarea name="comments" class="floatLabel" id="comments"></textarea>
+            <label for="comments">Comments</label>
+            </div>
+              <button type="submit" value="Submit" class="col-1-4">Submit</button>
+        </div>  
+        <div>
+            <button type="button" class="btn btn-primary float-right" id="bookNowBtn">Book Now</button>
+        </div>
+    </div>
+  </form>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

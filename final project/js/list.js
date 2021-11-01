@@ -4,7 +4,7 @@ refreshNow.addEventListener("click", function () {
 })
 
 function GetBooking() {
-    let url = 'https://api.sheety.co/b9b23bacbce0fa05289abc34d8cf52e6/bookingkpt/bookings';
+    let url = 'https://api.sheety.co/aeea0daa90881305a4fc51f23ce6488a/bookingApp/bookings';
     fetch(url)
         .then((response) => response.json())
         .then(json => {
@@ -21,7 +21,7 @@ function GetBooking() {
                 let gName = json.bookings[i].name
                 let gEmail = json.bookings[i].email
                 let gPax = json.bookings[i].pax
-                let gRemarks = json.bookings[i].remarks
+                let gPhone = json.bookings[i].phone
                 let gId = json.bookings[i].id
                 let btnId = "delete" + gId
 
@@ -30,7 +30,7 @@ function GetBooking() {
                 row.insertCell(1).innerHTML = gName
                 row.insertCell(2).innerHTML = gEmail
                 row.insertCell(3).innerHTML = gPax
-                row.insertCell(4).innerHTML = gRemarks
+                row.insertCell(4).innerHTML = gPhone
                 row.insertCell(5).innerHTML = "<button id='" + btnId + "' class='btn btn-danger'>Delete</button>"
 
                 bookingIds.push(btnId)
@@ -48,7 +48,7 @@ function GetBooking() {
 }
 
 function DeleteBooking(id) {
-    let url = 'https://api.sheety.co/b9b23bacbce0fa05289abc34d8cf52e6/bookingkpt/bookings/' + id;
+    let url = 'https://api.sheety.co/aeea0daa90881305a4fc51f23ce6488a/bookingApp/bookings/' + id;
     fetch(url, {
         method: 'DELETE',
     })
