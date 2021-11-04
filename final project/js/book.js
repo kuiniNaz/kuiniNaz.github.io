@@ -1,28 +1,45 @@
 let bookNowBtn = document.getElementById("bookNowBtn")
 bookNowBtn.addEventListener('click', function () {
-    let userName = document.getElementById("userName")
-    let userNameVal = userName.value
+    let name = document.getElementById("name")
+    let nameVal = name.value
 
-    let userEmail = document.getElementById("userEmail")
-    let userEmailVal = userEmail.value
+    let email = document.getElementById("email")
+    let emailVal = email.value
 
-    let userPax = document.getElementById("userPax")
-    let userPaxVal = userPax.value
+    let phone = document.getElementById("phone")
+    let phoneVal = phone.value
 
-    let userPhoneVal = document.getElementById("userPhone").value
+    let country = document.getElementById("country")
+    let countryVal = country.value
 
-    BookNow(userNameVal, userEmailVal, userPaxVal, userPhoneVal)
+    let arrive = document.getElementById("arrive")
+    let arriveVal = arrive.value
+
+    let depart = document.getElementById("depart")
+    let departVal = depart.value
+
+    let pax = document.getElementById("pax")
+    let paxVal = pax.value
+
+    let comments = document.getElementById("comments")
+    let commentsVal = comments.value
+
+    BookNow(nameVal, emailVal, phoneVal, countryVal, arriveVal, departVal, paxVal, commentsVal)
 
 })
 
-function BookNow(userName, userEmail, userPax, userPhone) {
+function BookNow(name, email, phone, country, arrive, depart, pax, comments) {
     let url = 'https://api.sheety.co/aeea0daa90881305a4fc51f23ce6488a/bookingApp/bookings';
     let body = {
         booking: {
-            name: userName,
-            email: userEmail,
-            pax: userPax,
-            Phone: userPhone
+            name: name,
+            email: email,
+            phone: phone,
+            country: country,
+            arrive: arrive,
+            depart: depart,
+            pax: pax,
+            comments: comments
         }
     }
     fetch(url, {
