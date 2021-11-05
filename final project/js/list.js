@@ -19,19 +19,21 @@ function GetBooking() {
             //load the new data/list
             for (let i = 0; i < json.bookings.length; i++) {
                 let gName = json.bookings[i].name
-                let gEmail = json.bookings[i].email
+                let gCountry = json.bookings[i].country
                 let gPax = json.bookings[i].pax
-                let gPhone = json.bookings[i].phone
+                let gArrive = json.bookings[i].arrive
+                let gDepart = json.bookings[i].depart
                 let gId = json.bookings[i].id
                 let btnId = "delete" + gId
 
                 let row = bookingNameList.insertRow(bookingNameList.rows.length)
                 row.insertCell(0).innerHTML = gId
                 row.insertCell(1).innerHTML = gName
-                row.insertCell(2).innerHTML = gEmail
+                row.insertCell(2).innerHTML = gCountry
                 row.insertCell(3).innerHTML = gPax
-                row.insertCell(4).innerHTML = gPhone
-                row.insertCell(5).innerHTML = "<button id='" + btnId + "' class='btn btn-danger'>Delete</button>"
+                row.insertCell(4).innerHTML = gArrive
+                row.insertCell(5).innerHTML = gDepart
+                row.insertCell(6).innerHTML = "<button id='" + btnId + "' class='btn btn-danger'>Delete</button>"
 
                 bookingIds.push(btnId)
             }
